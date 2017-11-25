@@ -68,6 +68,7 @@ public class Main {
 		props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+		// consumer.subscribe(Arrays.asList(filterAfterTopicName));
 		consumer.subscribe(Arrays.asList(filterAfterTopicName));
 
 		while (true) {
@@ -102,7 +103,7 @@ public class Main {
 		/*
 		2.将kafka中的信息写入redis
 		 */
-		kafkaToRedis();
+		// kafkaToRedis();
 		/*
 		3.在HBase中创建数据库(创建一次)
 		 */
